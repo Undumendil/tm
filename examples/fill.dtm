@@ -1,0 +1,10 @@
+[:] A
+[.] H
+
+// Fills the tape with `1`s.
+
+A * -> B 1 l
+A 1 -> _ _ r
+
+B * -> A 1 r
+B 1 -> _ _ l

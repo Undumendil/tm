@@ -1,0 +1,47 @@
+[:] Start
+[.] Halt
+
+Start _ -> _ _ r
+Start # -> SeekNext _ r
+
+SeekNext _ -> SeekEnd _ r
+SeekNext 0 -> SeekNext # r
+SeekNext # -> _ _ r
+SeekNext null -> Clean _ l
+
+SeekEnd _ -> _ _ r
+SeekEnd # -> Dec _ l
+SeekEnd null -> Dec _ l
+
+Dec 0 -> Dec 9 l
+Dec 1 -> Carry 0 l
+Dec 2 -> Carry 1 l
+Dec 3 -> Carry 2 l
+Dec 4 -> Carry 3 l
+Dec 5 -> Carry 4 l
+Dec 6 -> Carry 5 l
+Dec 7 -> Carry 6 l
+Dec 8 -> Carry 7 l
+Dec 9 -> Carry 8 l
+
+Carry _ -> Carry _ l
+Carry # -> Inc _ l
+
+Inc # -> Inc _ l
+Inc 0 -> Start 1 r
+Inc 1 -> Start 2 r
+Inc 2 -> Start 3 r
+Inc 3 -> Start 4 r
+Inc 4 -> Start 5 r
+Inc 5 -> Start 6 r
+Inc 6 -> Start 7 r
+Inc 7 -> Start 8 r
+Inc 8 -> Start 9 r
+Inc 9 -> Inc 0 l
+Inc null -> Start 1 r
+
+Clean _ -> Halt _ r
+Clean # -> _ null l
+
+=-=-=
+0: 9 9 2 # 2 2 # 1 8 # 3 # 1 2 # 1 1

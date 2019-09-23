@@ -1,0 +1,28 @@
+[:] A
+[.] H
+
+// 2-symbol 6-state possible busy beaver.
+
+// Terminates in large number of steps.
+// You would not want to run this
+// unless you are insane. Requires 
+// more memory than observable 
+// universe is able to store.
+
+A * -> B 1 r
+A 1 -> E 1 l
+
+B * -> C 1 r
+B 1 -> F 1 r
+
+C * -> D 1 l
+C 1 -> B 0 r
+
+D * -> E 1 r
+D 1 -> C 0 l
+
+E * -> A 1 l
+E 1 -> D 0 r
+
+F * -> H 1 l
+F 1 -> C 1 r

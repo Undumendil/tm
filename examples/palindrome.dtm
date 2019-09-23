@@ -1,0 +1,26 @@
+[:] Start
+[.] Accept Reject
+
+Start a -> ForthA null r
+Start b -> ForthB null r
+Start null -> Accept _ r
+
+ForthA _ -> _ _ r
+ForthA null -> CheckA _ l
+
+CheckA _ -> Reject _ r
+CheckA a -> Return null l
+CheckA null -> Accept _ r
+
+ForthB _ -> _ _ r
+ForthB null -> CheckB _ l
+
+CheckB _ -> Reject _ r
+CheckB b -> Return null l
+CheckB null -> Accept _ r
+
+Return _ -> _ _ l
+Return null -> Start _ r
+
+=-=-=
+0: a b a b a b a a b a b a

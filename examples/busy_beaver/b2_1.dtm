@@ -1,0 +1,8 @@
+[:] A
+[.] H
+
+// 2-symbol 1-state busy beaver.
+
+// Terminates in 6 steps.
+
+A * -> H 1 r

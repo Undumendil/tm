@@ -1,0 +1,19 @@
+[:] A
+[.] H
+
+// 3-symbol 3-state possible busy beaver.
+
+// Terminates in 119112334170342540 steps.
+// It is recommended to use `--fast`.
+
+A * -> B 1 r
+A 1 -> A 2 l
+A 2 -> C 1 l
+
+B * -> A 0 l
+B 1 -> B 2 r
+B 2 -> B 1 l
+
+C * -> H 1 r
+C 1 -> A 1 r
+C 2 -> C 1 r

@@ -1,0 +1,16 @@
+[:] q0
+[.] q4
+
+q0	_		->	q0	_	r
+q0	a		->	q1	c	r
+q1	_		->	q1	_	r
+q1	null	->	q2	b	l
+q2	_		->	q2	_	l
+q2	c		->	q0	_	r
+q2	null	->	q0	_	r
+q0	null	->	q3	_	l
+q3	*		->	q3	a	l
+q3	null	->	q4	_	r
+
+=-=-=
+0: a a a a a a a a

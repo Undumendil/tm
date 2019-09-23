@@ -1,0 +1,16 @@
+[:] A
+[.] H
+
+// 4-symbol 2-state possible busy beaver.
+
+// Terminates in 3932964 steps.
+
+A * -> B 1 r
+A 1 -> A 2 l
+A 2 -> A 1 r
+A 3 -> A 1 r
+
+B * -> B 1 l
+B 1 -> A 1 l
+B 2 -> B 3 r
+B 3 -> H 1 r
